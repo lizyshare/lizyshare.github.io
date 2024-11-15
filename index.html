@@ -140,6 +140,28 @@
             font-size: 1.2rem;
         }
 
+        /* 文字容器 */
+        .text-container {
+          position: relative; /* 相对定位，作为图片定位的参照 */
+          display: inline-block; /* 让文字保持内联样式 */
+          font-size: 20px; /* 设置文字大小 */
+        }
+
+        /* 图片悬浮样式 */
+        .text-container img {
+          position: absolute; /* 绝对定位 */
+          top: 0; /* 将图片悬浮在文字的上方 */
+          right: 0; /* 将图片悬浮在文字的右上角 */
+          display: none; /* 默认隐藏图片 */
+          width: 100px; /* 设置图片大小 */
+          height: auto;
+        }
+
+        /* 当鼠标悬停在文字上时显示图片 */
+        .text-container:hover img {
+          display: block;
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .about {
@@ -161,7 +183,6 @@
 
 <header>
     <h1>Welcome to my personal page!</h1>
-    <!-- <p>发现我的兴趣、创意和技能！</p> -->
 </header>
 
 <div class="container">
@@ -169,60 +190,51 @@
     <section class="about">
         <h2 class="section-title">关于我</h2>
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="C:\Users\29237\Downloads\myphoto.jpg" alt="个人照片">
+            <img src="images/myphotoCasual.jpg" alt="个人照片">
             <p>你好！我是李之勇</p>
-            <p>研究领域：知识图谱、推荐系统</p>
+            <p>电子邮件：<a href="">19810621057@163.com</a></p>
         </div>
     </section>
-
-    <!-- Blog Posts Section -->
-    <!-- <section class="blog-posts">
-        <h2 class="section-title">文章分享</h2>
-        <div class="post">
-            <h3>文章标题 1</h3>
-            <p>简短描述...</p>
-        </div>
-        <div class="post">
-            <h3>文章标题 2</h3>
-            <p>简短描述...</p>
-        </div>
-    </section> -->
 
     <!-- Projects Section -->
     <section class="projects">
         <h2 class="section-title">项目展示</h2>
-       <!--  <div class="project">
-            <h3>项目 1</h3>
+        <div class="project">
+            <h3>后端开发</h3>
+            <div>
+                <p><strong>在线聊天系统</strong>&nbsp;这是一个[项目类型]项目，旨在[项目目标或简短描述]。<a href="project-link">查看项目</a></p>
+                <p>这是一个[项目类型]项目，旨在[项目目标或简短描述]。<a href="project-link">查看项目</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h3>数据结构</h3>
             <p>这是一个[项目类型]项目，旨在[项目目标或简短描述]。</p>
             <a href="project-link">查看项目</a>
         </div>
         <div class="project">
-            <h3>项目 2</h3>
-            <p>这是另一个项目，涉及[项目细节或相关技术]。</p>
+            <h3>机器学习</h3>
+            <p>这是一个[项目类型]项目，旨在[项目目标或简短描述]。</p>
             <a href="project-link">查看项目</a>
-        </div> -->
+        </div>
+        <div class="project">
+            <h3>知识图谱</h3>
+            <p>这是一个[项目类型]项目，旨在[项目目标或简短描述]。<a href="project-link">查看项目</a></p>
+            
+        </div>
     </section>
-
-    <!-- Skills Section -->
-   <!--  <section class="skills">
-        <h2 class="section-title">技能展示</h2>
-        <ul>
-            <li>技能 1</li>
-            <li>技能 2</li>
-            <li>技能 3</li>
-        </ul>
-    </section> -->
 
     <!-- Contact Section -->
     <section class="contact">
-        <h2 class="section-title">联系方式</h2>
-        <p>电子邮件：<a href="mailto:your-email@example.com">19810621057@163.com</a></p>
+        <h2 class="section-title">其他账号</h2>
+        
         <div class="social-links">
             <a href="https://github.com/lizyshare" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://space.bilibili.com/474871882" target="_blank">B站</a>
+            <a href="https://blog.csdn.net/weixin_51104915?spm=1011.2124.3001.5343" target="_blank">CSDN</a>
+            <span class="text-container"><a>WeChat</a><img src="images/Wechat.jpg" alt="示例图片"></span>        
         </div>
     </section>
+
 </div>
 
 </body>
