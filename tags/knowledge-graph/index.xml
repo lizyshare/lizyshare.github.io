@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Knowledge Graph on Zhiyong Li</title>
+        <link>http://localhost:1313/tags/knowledge-graph/</link>
+        <description>Recent content in Knowledge Graph on Zhiyong Li</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Zhiyong Li</copyright>
+        <lastBuildDate>Wed, 23 Apr 2025 20:27:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/knowledge-graph/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>知识图谱</title>
+        <link>http://localhost:1313/p/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/</link>
+        <pubDate>Wed, 23 Apr 2025 20:27:24 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/mal.jpg" alt="Featured image of post 知识图谱" /&gt;&lt;h2 id=&#34;关于知识图谱&#34;&gt;关于知识图谱
+&lt;/h2&gt;&lt;p&gt;（待开发）&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
