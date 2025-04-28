@@ -265,7 +265,40 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#rag-的发展范式">RAG 的发展范式</a></li>
+    <li><a href="#rag-的核心技术组件">RAG 的核心技术组件</a></li>
+    <li><a href="#rag-与微调的比较">RAG 与微调的比较</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -326,7 +359,52 @@
     <section class="article-content">
     
     
-    <p>（正在撰写中）</p>
+    <h1 id="rag综述">RAG综述
+</h1><ul>
+<li>论文：Retrieval-Augmented Generation for Large Language Models: A Survey</li>
+<li><a class="link" href="https://arxiv.org/abs/2312.10997"  title="https://arxiv.org/abs/2312.10997"
+     target="_blank" rel="noopener"
+    >论文链接</a></li>
+</ul>
+<h2 id="rag-的发展范式">RAG 的发展范式
+</h2><p>论文中将 RAG 的发展划分为三个阶段：朴素 RAG、高级 RAG 和模块化 RAG：</p>
+<p><img src="/p/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/fig1.png"
+	width="1151"
+	height="716"
+	srcset="/p/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/fig1_hu_8b1c52be2dc45dff.png 480w, /p/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/fig1_hu_512480fe08b044d0.png 1024w"
+	loading="lazy"
+	
+		alt="RAG 三种范式"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="160"
+		data-flex-basis="385px"
+	
+></p>
+<ul>
+<li>
+<p><strong>朴素 RAG</strong>：这是最早期的方法，主要过程包括索引、检索和生成。它通过简单的 “检索 - 阅读” 框架，将外部知识引入大型语言模型。然而，这种简单的方法也有其局限性，比如在检索精度和召回率上可能不够理想，生成的回答可能存在幻觉等问题。</p>
+</li>
+<li>
+<p><strong>高级 RAG</strong> ：为克服朴素 RAG 的不足，高级 RAG 提出了多种优化策略。在检索阶段，它采用预检索和后检索策略，如使用滑动窗口方法优化索引技术，还引入查询重写、变换和扩展等方法来提高检索质量。在生成阶段，它关注于如何更好地整合检索到的信息，包括对信息进行重排序和压缩等操作。</p>
+</li>
+<li>
+<p><strong>模块化 RAG</strong> ：这是目前最先进的范式，具有更高的灵活性和适应性。它不仅继承了前两种范式的特点，还引入了新的模块和模式。例如，添加搜索模块以适应特定场景下的检索需求，或者通过改进检索器来提升检索性能。此外，模块化 RAG 还支持顺序处理和组件之间的端到端联合训练，使整个系统更加灵活和高效。</p>
+</li>
+</ul>
+<h2 id="rag-的核心技术组件">RAG 的核心技术组件
+</h2><p>RAG 框架主要由三个核心技术组件构成，即检索、生成和增强技术。</p>
+<ul>
+<li><strong>检索技术</strong> ：检索技术是 RAG 的基础，其目标是从外部知识库中找到与用户查询最相关的文档片段。这涉及到检索源的选择、检索粒度的确定、预处理以及嵌入模型的选择等多个关键问题。例如，检索源可以是文本、半结构化数据或结构化数据等；检索粒度可以从短语、句子到文档不等。</li>
+<li><strong>生成技术</strong> ：在检索到相关信息后，如何将其与大型语言模型结合以生成高质量的回答是生成技术的关键。这包括对检索到的内容进行调整和对大型语言模型进行微调。例如，可以通过上下文优化方法对检索到的信息进行重排序和压缩，以提高生成回答的准确性和相关性。</li>
+<li><strong>增强技术</strong> ：增强技术旨在通过对检索到的信息进行进一步处理和整合，来提升生成回答的质量和深度。这包括迭代检索、递归检索和自适应检索等多种方法。例如，迭代检索通过在知识库中反复搜索，为大型语言模型提供更丰富、更准确的上下文信息。</li>
+</ul>
+<h2 id="rag-与微调的比较">RAG 与微调的比较
+</h2><ul>
+<li><strong>RAG</strong> 的优势在于能够实时更新知识，并且对模型的调整需求相对较低。它就像给模型配备了一本随时可以查阅的 “教科书”，使其在需要精确检索信息的任务中表现出色。</li>
+<li><strong>微调</strong> 则更像是让学生通过长期学习来内化知识，对模型的调整需求较高，但在某些特定场景下可以实现更深层次的模型定制和风格控制。</li>
+</ul>
 
 </section>
 
