@@ -7,7 +7,52 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Zhiyong Li</copyright>
-        <lastBuildDate>Wed, 23 Apr 2025 20:27:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/demo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 08 May 2025 19:06:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/demo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>基于知识图谱的歌曲问答系统</title>
+        <link>http://localhost:1313/p/%E5%9F%BA%E4%BA%8E%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%84%E6%AD%8C%E6%9B%B2%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Thu, 08 May 2025 19:06:23 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%9F%BA%E4%BA%8E%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%84%E6%AD%8C%E6%9B%B2%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/lizyshare/KG_Chen&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/lizyshare/KG_Chen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;本项目旨在构建陈奕迅歌曲知识图谱问答系统，回答陈奕迅歌曲的相关信息，比如歌曲的作词人、作曲人，歌曲的所属专辑及发行时间等。&lt;/li&gt;
+&lt;li&gt;项目通过爬取线上数据，清理并整理为三元组格式数据，使用neo4j图数据库构建知识图谱。通过两个子项目进行问答交互，子项目1使用Cypher语句进行查询，子项目2通过本地部署大模型进行交互和查询。&lt;/li&gt;
+&lt;li&gt;最终构建的知识图谱界面如下，包含130个节点（4个种类，分别为歌曲、人物、专辑和发行时间）、170个关系（5个种类，分别为歌手、作词、作曲、专辑和发行时间）。
+&lt;img src=&#34;image.png&#34; alt=&#34;neo4j知识图谱界面&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;子项目介绍&#34;&gt;子项目介绍
+&lt;/h2&gt;&lt;h3 id=&#34;子项目1基于cypher语句&#34;&gt;子项目1：基于Cypher语句
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;技术选型：前端使用Vue框架、bootstrap和axios，后端使用flask框架，数据库使用neo4j。&lt;/li&gt;
+&lt;li&gt;项目定义了8种交互模式，通过输入语句匹配对应的模式，并到neo4j数据库中进行查询。8种模式如下：
+&lt;code&gt;&#39;歌曲(.+)所属的专辑是&#39;, &#39;歌曲(.+)的歌手是&#39;, &#39;歌曲(.+)的作词人是&#39;, &#39;歌曲(.+)的作曲人是&#39;, &#39;专辑(.+)包含的歌曲有&#39;, &#39;(.+)演唱的歌曲有&#39;, &#39;(.+)作词的歌曲有&#39;, &#39;(.+)作曲的歌曲有&#39;,&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;交互界面展示如下：
+&lt;img src=&#34;project1.png&#34; alt=&#34;项目1交互界面&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;子项目2基于ollama本地部署&#34;&gt;子项目2：基于ollama本地部署
+&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Tips：本项目首先要安装ollama,并下载大模型到本地。本项目使用的本地模式是 &lt;code&gt;deepseek-r1:7b&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;技术选型：前端使用streamlit框架，结合ollama的本地模型，通过设置prompt进行交互问答。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提示词设置如下：“基于以下结构化数据，建立知识关联以回答问题：每条记录以编号、歌曲名称、关系（如歌手、作词、作曲、专辑、发行时间）和其他信息（如人物、专辑名、时间）表示。每首歌可能有不同的关联信息，如歌手、作词人、作曲人，且这些信息可能重复或多次出现。通过结构化信息，能够识别某歌曲的某角色，如“0,是但求其爱,歌手,陈奕迅”说明 《是但求其爱》的歌手是陈奕迅。你的结构化知识库是{data}。用户的问题是{info}，你需要根据知识库中的内容回答用户的问题。每次回答之前说一句：您好，我是陈奕迅歌曲问答助手。&amp;ldquo;在本项目中，{data}表示180条三元组信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交互界面展示如下：
+&lt;img src=&#34;project2.png&#34; alt=&#34;项目2交互界面&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;项目不足之处&#34;&gt;项目不足之处
+&lt;/h2&gt;&lt;p&gt;针对歌曲知识图谱，存在多个歌手合唱一首歌曲、多个作曲人共同作曲同一首歌曲之类的情况，然而在构建三元组时并没有考虑这一情况。例如，“Fight As One”这首歌的歌手是“陈奕迅,蔡依林”，本项目将“陈奕迅,蔡依林”作为一个节点进行表示，这是该项目的不足之处，即未考虑人物之间的合作关系。项目可以进一步添加“人物-合作-人物”这一关系，使得知识图谱表达更加准确。&lt;/p&gt;
+&lt;h2 id=&#34;致谢&#34;&gt;致谢
+&lt;/h2&gt;&lt;p&gt;参考项目如下：&lt;a class=&#34;link&#34; href=&#34;http://openkg.cn/resource-list/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://openkg.cn/resource-list/ &lt;/a&gt;，感谢作者的开源贡献。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>知识图谱综述</title>
         <link>http://localhost:1313/p/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0/</link>
         <pubDate>Wed, 23 Apr 2025 20:27:24 +0800</pubDate>

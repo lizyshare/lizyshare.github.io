@@ -7,21 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Zhiyong Li</copyright>
-        <lastBuildDate>Wed, 23 Apr 2025 20:39:33 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>LLM</title>
-        <link>http://localhost:1313/categories/test/</link>
-        <pubDate>Wed, 23 Apr 2025 20:39:33 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/test/</guid>
-        <description>&lt;img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Featured image of post LLM" /&gt;</description>
-        </item>
-        <item>
+        <lastBuildDate>Thu, 08 May 2025 19:06:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>KG</title>
         <link>http://localhost:1313/categories/demo/</link>
-        <pubDate>Wed, 23 Apr 2025 20:27:24 +0800</pubDate>
+        <pubDate>Thu, 08 May 2025 19:06:23 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/demo/</guid>
         <description>&lt;img src="http://localhost:1313/categories/demo/demo.jpg" alt="Featured image of post KG" /&gt;</description>
+        </item>
+        <item>
+        <title>LLM</title>
+        <link>http://localhost:1313/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/test/</guid>
+        <description>&lt;img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Featured image of post LLM" /&gt;</description>
         </item>
         
     </channel>
